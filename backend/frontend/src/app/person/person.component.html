@@ -1,0 +1,19 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit($event)">
+  <div class="form-group" >
+    <label for="firstName">First Name</label>
+    <input type="text" class="form-control" id="firstName" formControlName="firstName" aria-describedby="firstName" placeholder="Please write your first name">
+  </div>
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input type="text" class="form-control" id="lastName" formControlName="lastName" placeholder="Please write your last name">
+  </div>
+  <div class="form-group">
+    <label for="jobInfo">Job</label>
+    <input type="text" class="form-control" id="jobInfo" formControlName="jobInfo" placeholder="Please write your profession">
+  </div>
+  <button type="submit" class="btn btn-primary" >Submit</button>
+</form>
+<br>
+<button class="btn btn-primary"  (click)="testBackend()">Test Backend</button>
+
+<div>{{testBackendMessage}}</div>

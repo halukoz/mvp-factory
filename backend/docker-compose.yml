@@ -1,0 +1,26 @@
+version: '2'
+services:
+  backend:
+    container_name: demo
+    build:
+      dockerfile: Dockerfile
+    image: demo:latest
+    ports:
+      - 8082:8080
+    networks:
+      - spring-cloud-network
+  frontend:
+    image: demo-ui
+    container_name: demo-ui
+    build:
+      context: ./demo-ui
+      dockerfile: Dockerfile
+    ports:
+      - 8081:80
+    depends_on:
+      - backend
+    networks:
+      - spring-cloud-network
+networks:
+  spring-cloud-network:
+    driver: bridge
