@@ -13,7 +13,7 @@ services:
     image: demo-ui
     container_name: demo-ui
     build:
-      context: ./demo-ui
+      context: ./frontend
       dockerfile: Dockerfile
     ports:
       - 8081:80
